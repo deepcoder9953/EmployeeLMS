@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+            padding: 50px;
+        }
+        .dashboard-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            width: 22rem;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background-color: #fff;
+        }
+        .card-img-top {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .card-body h5 {
+            font-weight: bold;
+            color: #333;
+        }
+        .list-group-item {
+            font-weight: 500;
+            color: #555;
+        }
+        .btn-edit {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-edit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="card">
+
+            <img src="{{ photo }}" class="card-img-top" alt="Profile Image" style="width:350px;height:220px;">
+
+            <div class="card-body text-center">
+
+                <h5 class="card-title">{{ full_name }}</h5> 
+                <p class="card-text">{{ position }}</p> 
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Address:</strong> {{ address }}</li>
+                <li class="list-group-item"><strong>Total Leaves Taken:</strong> {{ total_leaves_taken }}</li>
+                <li class="list-group-item"><strong>Total Leaves Left:</strong> {{ leaves_left }}</li>
+            </ul>
+
+            <div class="card-body text-center">
+                <a href="#" class="btn btn-edit btn-primary">Edit Info</a> 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
